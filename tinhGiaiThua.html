@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Giai Thừa</title>
+</head>
+<body>
+<label for="n"> N = </label><input type="text" size="10" id="n">
+<input type="button" value="Calculate" id="btn">
+<h1 id="result"> </h1>
+<script>
+    let res = document.getElementById("result");
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click",function (){
+        let number = document.getElementById("n").value;
+        if (isNaN(number)) {
+            res.innerHTML = 'Input must be a number.'
+        } else {
+            let result = 1;
+            for ( let i = number; i > 0; i--) {
+                result = result * i;
+            }
+            res.innerHTML = `${number}! = ${result}`
+        }
+    })
+</script>
+
+
+</body>
+</html>
